@@ -1,0 +1,130 @@
+#grid{
+    width: 2000px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(6,200px);
+    grid-gap:1rem;
+}
+#top_header{
+    padding: 20px;
+    background-color: rgb(186, 105, 221);
+    grid-column: 1/10;
+    grid-row: 1/2;
+    position:relative;z-index:2
+}
+#login{
+    padding: 10px;
+    background-color: rgb(123, 38, 172);
+    grid-row: 2/7;
+    color: white;
+    font-weight: bold;
+}
+#post{
+    grid-column: 2/9;
+    grid-row: 2/7;
+}
+#ad{
+    grid-column: 9/10;
+    grid-row: 2/7;
+    font-weight: bold;
+}
+#intro{
+    background-color: rgb(80, 0, 109);
+    color: rgb(65, 22, 88);
+}
+#shop{
+    background-color: brown;
+}
+
+li{list-style: none;}
+a{text-decoration: none;}
+#navi{
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    width: 1000px;
+    text-align: center;
+    float: right;
+    font-weight: bold;
+}
+#navi li{
+    width:100%
+}
+.submenu > li { 
+    overflow: hidden;
+}
+.submenu{
+    height: 0;
+    overflow: hidden;
+}
+#navi > :hover{
+    transition-duration: 0.5s;
+    background-color: white;
+}
+#navi > li:hover .submenu{
+    transition-duration: 0.5s;
+    height: 50px;
+    text-align: left;
+    background-color: rgb(210, 187, 235);
+}
+#foot{
+    background-color: rgb(246, 212, 255);
+    display: inline-flex;
+    width: 2000px;
+    height: 60px;
+    float: left;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding-top: 30px;
+}
+#foot li{
+    width: 25%
+}
+#post{
+    padding: 10px;
+    display: grid;
+    grid-gap: 1rem;
+}
+.card{
+    border: 3px solid rgb(84, 15, 110);
+    background-color: rgb(252, 226, 241);
+    height: 300px;
+    border-radius: 20px;
+    padding-right: 20px;
+}
+#intro{
+    padding-left: 10px;
+    border: 2px solid rgb(50, 23, 105);
+    background-color: rgb(234, 224, 255);
+    border-radius: 10px;
+}
+#shop{
+    margin-top: 10px;
+    padding-left: 10px;
+    border: 2px solid rgb(74, 21, 94);
+    background-color: rgb(246, 243, 255);
+    border-radius: 10px;
+}
+#post{
+    display: flex;
+    flex-direction: column;
+}
+#post img{
+    width: 300px;
+    height: 200px;
+    display: block;
+    float: left;
+    padding-right: 30px;
+}
+h3{
+    font-size: 20px;
+    padding-left: 30px;
+}
+h1{
+    font-size: 40px;
+}
+#title{
+    color: white;
+}

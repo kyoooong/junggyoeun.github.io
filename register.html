@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>정교은</title>
+</head>
+<html>
+<body>
+
+    <h2>동아리 가입 양식</h2>
+
+    <form action="">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="major">학부/학과</label>
+        <input list="majors">
+        <datalist id="majors">
+            <option value="Computer Science">
+            <option value="Data Science">
+            <option value="Mechanical Systems">
+            <option value="Chemical and Biological Engineering">
+            <option value="Materials Physics">
+        </datalist><br>
+        <label for="grade">학년</label>
+        <input type="radio" id="first_grade" name="grade" value="1학년">
+        <label for="first_grade">1학년</label>
+        <input type="radio" id="second_grade" name="grade" value="2학년">
+        <label for="second_grade">2학년</label>
+        <input type="radio" id="third_grade" name="grade" value="3학년">
+        <label for="third_grade">3학년</label>
+        <input type="radio" id="fourth_grade" name="grade" value="4학년">
+        <label for="fourth_grade">4학년</label><br>
+
+        <label for="student_number">학번</label>
+        <input type="text" id="student_number" name="student_number"><br>
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email>"><br>
+        <label for="phone_number">전화번호</label>
+        <input type="tel" id="phone_number" name="phone_number" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"><br>
+        <label for="reason">지원 동기</label>
+        <textarea name="reason" row="10" cols="30"></textarea><br>
+       
+        <button type="join">가입하기</button>
+        <button type="calcel">취소하기</button>
+    </form>
+
+</body>
+</html>
