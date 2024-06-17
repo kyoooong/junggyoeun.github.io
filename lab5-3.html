@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        function bmi(name, height, weight, age){
+            let del_height = height * 0.01;
+            let cal_bmi = weight / (del_height ** 2);
+            let last_bmi;
+
+            if(age < 30){
+                if(cal_bmi <= 17.9) { last_bmi = "저체중"; }
+                else if(cal_bmi <= 23) { last_bmi = "표준체중"; }
+                else if(cal_bmi <= 90) { last_bmi = "과체중"; }
+                else { last_bmi = "비만"; }
+            }
+            else{
+                if(cal_bmi <= 18.4) { last_bmi = "저체중"; }
+                else if(cal_bmi <= 24) { last_bmi = "표준체중"; }
+                else if(cal_bmi < 30) { last_bmi = "과체중"; }
+                else { last_bmi = "비만"; }
+            }
+
+            document.write("<h1>이름: " + name + "</h1>");
+            document.write("<h1>나이: " + age + "</h1>");
+            document.write("<h1>키(cm): " + height + "</h1>");
+            document.write("<h1>당신은 " + last_bmi + "(" + cal_bmi + ")입니다</h1>");
+        }
+        
+        let name = prompt("이름을 입력하세요");
+        let age = parseInt(prompt("나이를 입력하세요")); // 입력된 나이를 정수로 변환
+        let in_height = parseFloat(prompt("키(cm)를 입력하세요")); // 입력된 키를 실수로 변환
+        let in_weight = parseFloat(prompt("체중(kg)을 입력하세요")); // 입력된 체중을 실수로 변환
+        bmi(name, in_height, in_weight, age); // bmi 함수 호출 시 매개변수로 name을 전달
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #rect{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="rect"></div>
+    <script>
+        let myRect = document.getElementById('red')
+        myRect.addEventListener(이벤트명, 이벤트핸들러);
+
+        myRect.addEventListener("mouseover", function(){
+            myRect.style.backgroundColor = 'green'
+            myRect.style.borderRadius = '50%';
+        })
+
+        myRect.addEventListener("mouseout", function(){
+            myRect.style.backgroundColor = 'green'
+            myRect.style.borderRadius = '50%';
+        })
+
+        myRect.addEventListener("click", function(){
+            myRect.style.backgroundColor = 'blue'
+            myRect.style.borderRadius = '50%';
+        })
+    </script>
+    <h1 id = "title"></h1>
+    <h1 id="spring" class="season"> 봄 </h1>
+    <h1 id="summer" class="season"> 여름 </h1>
+    <h1 id="autumm" class="season"> 가을 </h1>
+    <h1 id="winter" class="season"> 겨울 </h1>
+
+    <script>
+        //let title = prompt('제목 입력')
+        //document.getElementById('title').innerHTML = 'title'
+        //t.innerHTML = title;
+
+
+        let season = document.getElementsByName('season');
+        for(var i=0; i<season.length;i++){
+            season[i].style.color = 'red'
+        }
+
+    </script>
+</body>
+</html>

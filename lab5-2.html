@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        function messages(msg, count) {
+            for (let x = 0; x < count; x++) {
+                document.write("<h1>" + msg + "</h1>");
+            }
+        }
+
+        let in_msg = prompt("반복할 문구를 입력하세요");
+        let in_count = prompt("반복할 횟수를 입력하세요");
+
+        messages(in_msg, in_count); 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Test</title>
+    <style>
+        *{
+            margin: 0 auto;
+            line-height: 3em;
+        }
+        body{
+            width: 300px;
+        }
+        select{
+            height: 30px;
+            font-size: 1.2em;
+        }
+        div{
+            width: 200px; height: 200px;
+            background-color: rgb(31, 192, 232);
+            color: white;
+            line-height:200px;
+            text-align:center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>DOM 실습</h1>
+        <label>텍스트 내용 입력 <input type="text" id="t"></label><br>
+        <label>배경색 <input type="color" id="bgcolor" value="#0000ff"></label><br>
+        <label>글자색 <input type="color" id="fcolor" value="#ffffff"></label><br>
+        <label>글자크기 <select id="fsize">
+            <option value="10px">10</option>
+            <option value="15px">15</option>
+            <option value="20px">20</option>
+            <option value="25px">25</option>
+            <option value="30px">30</option>
+            </select>
+        </label><br> 
+        <label><input type="radio" name="shape" value="circle" class="shape">원</label> &nbsp;&nbsp;
+        <label><input type="radio" name="shape" value="square" class="shape" checked>사각형</label>&nbsp;&nbsp;
+        <label><input type="radio" name="shape" value="round" class="shape">모서리가 둥근 사각형</label>
+        <div id="rs">텍스트 내용</div>
+    </form>
+    <script>
+        function updateDiv() {
+            const text = document.getElementById("t").value;
+            const bgColor = document.getElementById("bgcolor").value;
+            const fColor = document.getElementById("fcolor").value;
+            const fSize = document.getElementById("fsize").value;
+            const shape = document.querySelector('input[name="shape"]:checked').value;
+
+            const div = document.getElementById("rs");
+
+            div.innerHTML = text;
+            div.style.backgroundColor = bgColor;
+            div.style.color = fColor;
+            div.style.fontSize = fSize;
+
+            if (shape === "circle") {
+                div.style.borderRadius = "50%";
+            } else if (shape === "round") {
+                div.style.borderRadius = "15px";
+            } else {
+                div.style.borderRadius = "0";
+            }
+        }
+
+        document.getElementById("t").addEventListener("blur", updateDiv);
+        document.getElementById("bgcolor").addEventListener("change", updateDiv);
+        document.getElementById("fcolor").addEventListener("change", updateDiv);
+        document.getElementById("fsize").addEventListener("change", updateDiv);
+        document.querySelectorAll('input[name="shape"]').forEach(radio => {
+            radio.addEventListener("change", updateDiv);
+        });
+
+        // Initial call to set the correct initial state
+        updateDiv();
+    </script>
+</body>
+</html>

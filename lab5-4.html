@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* CSS 스타일을 사용하여 텍스트 크기를 최대로 설정 */
+        #demo {
+            font-size: 72px;
+            font-weight: bold;
+            color: blue; /* 텍스트 크기를 크게 설정 */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="demo"></div>
+    
+    <script>
+        function countdown(seconds) {
+            let display = document.getElementById("demo");
+    
+            const timer = setInterval(function() {
+                display.innerHTML = seconds; 
+                seconds--; 
+    
+                if (seconds < 0) {
+                    clearInterval(timer); 
+                    display.innerHTML = "타이머 종료!"; 
+                }
+            }, 1000); 
+        }
+    
+        const count = parseInt(prompt("카운트다운할 숫자를 입력하세요:"));
+
+        countdown(count);
+    
+    </script>
+    
+    </body>
+    </html>

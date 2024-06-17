@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: #e0f7ff;
+            border-radius: 15px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 0 auto;
+
+        }
+        h1, h2 {
+            color: red;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        #randomNum {
+            background-color: white;
+            font-weight: bold;
+            color: red;
+            border: 2px solid red;
+            border-radius: 5px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);   
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+    <h1>로또 번호 생성 결과</h1>
+    <button id="randomNum">로또 번호 생성하기</button>
+    <h2 id="result"></h2>
+    <button onclick="javascript:window.close();">닫기</button>
+    </div>
+    <script>
+        function genLottoNumbers() {
+            const numbers = new Set();
+            while (numbers.size < 6) {
+                const num = Math.floor(Math.random() * 45) + 1;
+                numbers.add(num);
+            }
+            return Array.from(numbers);
+        }
+
+        document.getElementById("randomNum").addEventListener("click", function() {
+            const lottoNumbers = genLottoNumbers();
+            document.getElementById("result").textContent = "결과 : " + lottoNumbers.join(', ');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        function grade(x){
+            var mark;
+            if( x >= 90 ){ mark = "A"; }
+            else if( x >= 80 ){ mark = "B"; }
+            else if( x >= 70 ){ mark = "C"; }
+            else if( x >= 60 ){ mark = "D"; }
+            else { mark = "F"; }
+            document.write("<h1>당신의 학점은 " + mark + "입니다</h1>")
+        }
+
+        var score = prompt("성적을 입력하세요");
+        grade(parseInt(score)); 
+
+    </script>
+</body>
+</html>

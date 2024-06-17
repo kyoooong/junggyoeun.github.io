@@ -1,0 +1,81 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column; /* 컨텐츠를 세로로 배치 */
+    align-items: center; /* 가운데 정렬 */
+    min-height: 100vh; /* 최소 화면 높이를 100%로 설정 */
+    margin: 0; /* body의 기본 마진 제거 */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%; /* 헤더의 너비를 화면 전체로 설정 */
+}
+
+.container {
+    max-width: 800px;
+    width: 100%; /* 컨테이너의 너비를 화면 전체로 설정 */
+    padding: 20px;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subTitle {
+    font-size: 24px;
+    color: #666;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* 요소들을 골고루 공간 나눠 정렬 */
+}
+
+li {
+    width: calc(50% - 20px); /* 2열로 정렬하기 위한 너비 계산 */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* 아이템 사이의 간격 */
+    text-align: center;
+    position: relative; /* 배경 이미지 삽입을 위한 상대 위치 설정 */
+}
+
+.subject {
+    font-weight: bold;
+    color: #333;
+}
+
+/* 배경 이미지 스타일 */
+li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('your-image.jpg'); /* 이미지 경로 설정 */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    border-radius: 10px;
+}
