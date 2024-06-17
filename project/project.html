@@ -1,16 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정교은</title>
+    <title>turn _ your taste</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .image-container img {
+            width: 400px; 
+            height: auto; 
+            margin: 0 10px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+    </style>
 </head>
 <body>
-    <a href="project_main.html">main<br><br></a>
-    <a href="project_Login.html">login<br><br></a>
-    <a href="project_join.html">join<br><br></a>
-    <a href=".html">lab2-4<br><br></a>
-    <a href=".html">lab2-5<br><br></a>
-    <a href=".html">lab2-6<br><br></a>
+    <header>
+        <h1>Turn _ your taste</h1>
+    </header>
+    <nav>
+        <ul id="navi">
+            <li><a href="#">Forum</a>
+                <ul class="submenu">
+                    <li><a href="#online" onclick="location.href='project_online.html'">On-line</a></li>
+                    <li><a href="#offline" onclick="location.href='project_offline.html'">Off-line</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Sign in</a>
+                <ul class="submenu">
+                    <li><a href="#login" onclick="location.href='project_Login.html'">Log in</a></li>
+                    <li><a href="#join" onclick="location.href='project_join.html'">Join</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="image-container">
+        <img src="music.jpg" alt="online" onclick="location.href='project_online.html'">
+        <img src="offline.jpg" alt="offline"onclick="location.href='project_offline.html'">
+    </section>
+
+    <footer>
+        <ul id="foot">
+            <li><a href="#">Introduce ourselves</a></li>
+        </ul>
+    </footer>
 </body>
 </html>
