@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <script src="project_join.js"></script>
 </head>
 <body>
     <h1>Log in</h1>
@@ -23,7 +24,31 @@
             </ul>
         </fieldset>
         <fieldset>
-            <input type="submit" value="Log in">
+            <button id="loginButton" type="button">LOGIN</button>
+            <button id="home" type="button" onclick="location.href='project.html'">HOME</button>
         </fieldset>
+
+        <script>
+            let loginButton = document.getElementById("loginButton");
+
+            loginButton.addEventListener("click", function() {
+                console.log("start!");
+                let id = document.getElementById("id").value;
+                let pw = document.getElementById("pw").value;
+
+                let userinfo = getUserInfo(id, pw);
+
+                console.log(userinfo);
+
+                if(userinfo == null) {
+                    alert("회원이 아닙니다. 회원가입을 해주세요.");
+                    window.location.href = "./project_join.html";
+
+                } else {
+                    alert("안녕하세요! " + userinfo[0] + " 님! 이제 게시판의 글쓰기 기능을 이용하실 수 있습니다.");
+                }
+            });
+            
+        </script>
 </body>
 </html>

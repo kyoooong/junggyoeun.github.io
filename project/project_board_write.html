@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/css"> -->
+    <script src="project_join.js"></script>
+</head>
+<body>
+        <h2>글 작성하기</h2>
+
+        <form id="writeForm">
+        <div>제목 : <input type="text" id="title" name="title"/></div>
+        <div>작성자 : <span id="user"></span></div>
+        <div>내용 : <textarea id="content" name="content"></textarea></div>
+        <button type="button" id="postButton">게시하기</button>
+        <button id="home" type="button" onclick="location.href='project_board_list.html'">목록으로 돌아가기</button>
+        </form>
+        
+        <script src="project_board_write.js"></script>
+</body>
+</html>

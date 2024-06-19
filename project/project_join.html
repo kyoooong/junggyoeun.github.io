@@ -5,23 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join</title>
     <link rel="stylesheet" href="style.css">
+    <script src="project_join.js"></script> 
 </head>
-<script src="project_join.js">
-    let joinButton = document.getElementById("userJoin");
-    joinButton.onsubmit = function() {
-        let id = document.getElementById("userid");
-        let email = document.getElementById("email");
-        let pw = document.getElementById("pw");
-
-        // 빈칸 있을 시에 알림
-        if (id == null || email == null || pw == null) {
-            alert("모든 사용자 정보를 입력해 주세요.");
-        } else {
-            // UserJoin에 넘겨줘서 쿠키에 저장
-            UserJoin(id, email, pw);
-        }
-    }
-</script>
 <body>
     <h1>Join</h1>
     <fieldset>
@@ -29,20 +14,49 @@
         <ul>
             <li>
                 <label for="id">ID</label>
-                <input id="userid" type="text" id="id" name="id">
+                <input type="text" id="id" name="id">
             </li>
             <li>
                 <label for="email">E-mail</label>
-                <input id="email" type="email" id="email" name="email">
+                <input type="email" id="email" name="email">
             </li>
             <li>
                 <label for="pw">PW</label>
-                <input id="pw" type="password" id="pw" name="pw">
+                <input type="password" id="pw" name="pw">
             </li>  
         </ul>
     </fieldset>
     <fieldset>
-        <input id="userJoin" type="submit" value="join">
+        <button id="userJoin" type="button">JOIN</button>
+        <button id="home" type="button" onclick="location.href='project.html'">HOME</button>
     </fieldset>
+    <script>
+        let userJoin = getCookie("userJoin");
+
+        let joinButton = document.getElementById("userJoin");
+
+        joinButton.addEventListener("click", function() {
+            let id = document.getElementById("id").value;
+            let email = document.getElementById("email").value;
+            let pw = document.getElementById("pw").value;
+
+            console.log("ID:", id, "Email:", email, "PW:", pw);
+
+            // 빈칸 있을 시에 알림
+            if (!id || !email || !pw) {
+                alert("모든 사용자 정보를 입력해 주세요.");
+            } else {
+                // UserJoin에 넘겨줘서 쿠키에 저장
+                console.log("UserJoin start");
+                UserJoin(id, email, pw);
+                
+                let userinfo = getUserInfo(id, pw);
+                if (userinfo != null) {
+                    alert("환영합니다 " + userinfo[0] + "님!");
+                    window.location.href = "./project_Login.html";
+                }
+            }
+        });
+    </script>
 </body>
 </html>
