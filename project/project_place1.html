@@ -8,6 +8,8 @@
 </head>
 <body>
     <header>
+        <h1>Turn _ your taste</h1>
+    </header>
         <div class="container">
             <div class="title">
                 How is your feeling today?
@@ -16,7 +18,6 @@
                 느지막한 오후의 외출! 황홀한 일몰과 야경을
             </div>
         </div>
-    </header>
     <div class="container">
         <div id="place1" class="place" onclick="location.href='project_place1_01.html'">
             <h1>응봉산 팔각정 <br>in Seongdong</h1>
@@ -31,6 +32,54 @@
             <h1>낙산공원<br>in Jongno</h1>
         </div>
     </div>
-    
+    <div id="map" style="width:500px;height:350px;"></div>
+
+	<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=1ea3790e49275a4e58b13e275989c89f"></script>
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = {
+		        center: new kakao.maps.LatLng(37.56682, 126.97865), // 지도의 중심좌표
+		        level: 9, // 지도의 확대 레벨
+		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+		    }; 
+
+		// 지도를 생성한다 
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+		// 마커와 인포윈도우를 생성할 위치와 내용을 객체로 저장
+		var positions = [
+		    {
+		        title: '응봉산 팔각정', 
+		        latlng: new kakao.maps.LatLng(37.550434, 127.033245)
+		    },
+		    {
+		        title: '석촌호수', 
+		        latlng: new kakao.maps.LatLng(37.5116, 127.1016)
+		    },
+		    {
+		        title: '이태원 해방촌', 
+		        latlng: new kakao.maps.LatLng(37.5382, 126.9876)
+		    },
+		    {
+		        title: '낙산공원', 
+		        latlng: new kakao.maps.LatLng(37.5793, 127.0073)
+		    }
+		];
+
+		// 마커와 인포윈도우를 생성하여 지도에 표시하는 함수
+		for (var i = 0; i < positions.length; i++) {
+		    var marker = new kakao.maps.Marker({
+		        map: map, // 마커를 표시할 지도
+		        position: positions[i].latlng // 마커의 위치
+		    });
+
+		    var infowindow = new kakao.maps.InfoWindow({
+		        content: '<div class="custom-infowindow">' + positions[i].title + '</div>' // 인포윈도우에 표시할 내용
+		    });
+
+		    // 인포윈도우를 마커에 표시
+		    infowindow.open(map, marker);
+		}
+	</script>
 </body>
 </html>
